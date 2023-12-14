@@ -70,32 +70,36 @@ const TaskManager = () => {
   };
 
   return (
-    <div>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
       <h1>Task Manager</h1>
-      <ul>
-        {tasks.map(task => (
-          <li key={task.task_id}>
-            <strong>{task.title}</strong>
-            <p>{task.description}</p>
-            <p>Due Date: {task.due_date}</p>
-            <p>Status: {task.status}</p>
-            <button onClick={() => handleDeleteTask(task.task_id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-      <div>
-        <label>Title:</label>
-        <input type="text" name="title" value={newTask.title} onChange={handleInputChange} />
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '400px' }}>
+          <ul style={{ listStyleType: 'none', padding: '0' }}>
+            {tasks.map(task => (
+              <li key={task.task_id} style={{ marginBottom: '20px', border: '1px solid #ddd', borderRadius: '8px', padding: '10px' }}>
+                <strong>{task.title}</strong>
+                <p>{task.description}</p>
+                <p>Due Date: {task.due_date}</p>
+                <p>Status: {task.status}</p>
+                <button onClick={() => handleDeleteTask(task.task_id)}>Delete</button>
+              </li>
+            ))}
+          </ul>
+          <div>
+            <label>Title:</label>
+            <input type="text" name="title" value={newTask.title} onChange={handleInputChange} style={{ width: '100%', marginBottom: '10px' }} />
+          </div>
+          <div>
+            <label>Description:</label>
+            <textarea name="description" value={newTask.description} onChange={handleInputChange} style={{ width: '100%', marginBottom: '10px' }} />
+          </div>
+          <div>
+            <label>Due Date:</label>
+            <input type="date" name="due_date" value={newTask.due_date} onChange={handleInputChange} style={{ width: '100%', marginBottom: '10px' }} />
+          </div>
+          <button onClick={handleAddTask} style={{ backgroundColor: '#007bff', color: '#fff', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer' }}>Add Task</button>
+        </div>
       </div>
-      <div>
-        <label>Description:</label>
-        <textarea name="description" value={newTask.description} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Due Date:</label>
-        <input type="date" name="due_date" value={newTask.due_date} onChange={handleInputChange} />
-      </div>
-      <button onClick={handleAddTask}>Add Task</button>
     </div>
   );
 };
