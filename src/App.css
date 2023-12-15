@@ -28,6 +28,24 @@
   color: #61dafb;
 }
 
+.task-manager-body {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 20);
+  border: 2px solid #000;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.button-delete {
+  background-color: #FF2C21;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
